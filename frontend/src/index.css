@@ -1,0 +1,11 @@
+@import "tailwindcss";
+:root {
+  font-family: cursive;
+  color: 242424;
+  background-color: #ffffff;
+/* 
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}

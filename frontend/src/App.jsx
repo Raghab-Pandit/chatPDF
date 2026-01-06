@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useRef } from "react"
+import { MdUploadFile } from "react-icons/md"
+import Upload from "./Pages/upload"
 
 const App= () =>{
 
-  return (
-    <div className='bg-white min-h-screen w-full flex items-center justify-center'>
-    </div>
+  return(
+     <>
+      <Upload />
+     </>
   )
 }
 

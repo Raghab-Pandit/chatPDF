@@ -6,10 +6,10 @@ import Chatbot from "./Pages/chatbot"
 const App= () =>{
 
   return(
-     <>
+     <div className="flex">
       <Upload />
       <Chatbot />
-     </>
+     </div>
   )
 }
 

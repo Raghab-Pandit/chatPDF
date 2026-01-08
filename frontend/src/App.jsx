@@ -6,7 +6,7 @@ import Chatbot from "./Pages/chatbot"
 const App= () =>{
 
   return(
-     <div className="flex">
+     <div className="flex flex-col md:flex-row">
       <Upload />
       <Chatbot />
      </div>

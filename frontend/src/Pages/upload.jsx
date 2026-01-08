@@ -18,7 +18,11 @@ const Upload = () =>{
       }
 
       const handleDocDelete = () =>{
-         setDoc(null);
+         setDoc("");
+
+      if(inputRef.current){
+        inputRef.current.value= null
+      }
       }
     
       const inputClicked = () => {

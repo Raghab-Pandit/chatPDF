@@ -32,10 +32,10 @@ const Upload = ({ setDocName, docName }) =>{
       }
     
       return (
-      <div className={`h-[calc(100vh-6rem)] w-full flex items-center justify-center px-8 transition-all duration-700 ${docName ? "ml-0" : "ml-[30%]"}`}>
+      <div className={`h-[calc(100vh-6rem)] w-full flex items-center justify-center px-8 transition-all duration-700 ${docName ? "ml-0" : "md:ml-[30%]"}`}>
           <div className='flex items-center justify-center border border-primary rounded-2xl shadow-2xl py-5'>
-            <div className="flex flex-col w-full justify-between items-center p-5 space-y-13">
-               <h1 className="font-bold text-5xl">AskPDF</h1>
+            <div className="flex flex-col w-full justify-between items-center p-2 sm:p-5 space-y-13">
+               <h1 className="font-bold text-3xl sm:text-5xl">AskPDF</h1>
                        <input
                         type="file"
                         accept=".pdf, .docx"
@@ -46,11 +46,11 @@ const Upload = ({ setDocName, docName }) =>{
                {Doc ? 
                (
                <div 
-                className="w-full group border-3 rounded-3xl flex items-center justify-center mt-5 p-10 font-semibold text-2xl space-x-2 cursor-pointer"
+                className="w-full group border-3 rounded-3xl flex items-center justify-center mt-5 p-2 sm:p-10 font-semibold text-[20px] sm:text-2xl space-x-2 cursor-pointer"
               >
                   <FaFilePdf /> <p>{Doc.name}</p> 
                   <button
-                  className="md:invisible md:group-hover:visible cursor-pointer text-red-500 border-none outline-none"
+                  className="cursor-pointer text-red-500 border-none outline-none"
                   onClick={handleDocDelete}
                   >
                      <IoIosCloseCircleOutline />
@@ -60,10 +60,10 @@ const Upload = ({ setDocName, docName }) =>{
                : 
                (
                <div 
-                className="w-full border-3 rounded-3xl flex items-center justify-center mt-5 p-10 font-semibold text-2xl space-x-2 cursor-pointer"
+                className="w-full border-3 rounded-3xl flex items-center justify-center mt-5 p-2 sm:p-10 font-semibold text-[20px] sm:text-2xl space-x-2 cursor-pointer"
                 onClick={inputClicked}
               >
-                  <MdUploadFile /> <p> Upload your Document</p>
+                  <MdUploadFile className="hidden sm:block"/> <p> Upload your Document</p>
                </div>
                )
                }

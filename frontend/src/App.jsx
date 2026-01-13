@@ -7,8 +7,8 @@ const App= () =>{
 
   return(
      <div className="flex flex-col md:flex-row">
-      <Upload setDocName={setDocName} />
-      <Chatbot docName={docName} />
+      <Upload setDocName={setDocName} docName={docName} />
+      <Chatbot docName={docName}/>
      </div>
   )
 }

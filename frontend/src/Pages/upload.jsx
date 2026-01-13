@@ -4,7 +4,7 @@ import { FaFilePdf } from "react-icons/fa"
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
 
-const Upload = ({ setDocName }) =>{
+const Upload = ({ setDocName, docName }) =>{
    
    const [Doc, setDoc] = useState(null)
 
@@ -32,8 +32,8 @@ const Upload = ({ setDocName }) =>{
       }
     
       return (
-      <div className="h-[calc(100vh-6rem)] w-full flex items-center justify-center px-8">
-          <div className='flex items-center justify-center bg-white rounded-2xl shadow-2xl py-5'>
+      <div className={`h-[calc(100vh-6rem)] w-full flex items-center justify-center px-8 transition-all duration-700 ${docName ? "ml-0" : "ml-[30%]"}`}>
+          <div className='flex items-center justify-center border border-primary rounded-2xl shadow-2xl py-5'>
             <div className="flex flex-col w-full justify-between items-center p-5 space-y-13">
                <h1 className="font-bold text-5xl">AskPDF</h1>
                        <input

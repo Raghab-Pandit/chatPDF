@@ -11,8 +11,8 @@ const Chatbot= ({ docName }) =>{
     }, [docName])
 
     return(
-    <div className={`${Expand ? "opacity-100" : "opacity-0 md:flex hidden"} flex flex-col justify-center w-full border-2 border-primary rounded-xl transition-all duration-300`}>
-           <div className={`w-full bg-blue-600 h-[calc(10vh-0.6rem)] rounded-t-xl px-3 flex items-center justify-between`}>
+    <div className={`${Expand ? "opacity-100" : "opacity-0 md:flex hidden"} flex flex-col justify-center w-full border-2 border-primary rounded-b-xl transition-all duration-300`}>
+           <div className={`w-full border-b border-primary h-[calc(10vh-0.6rem)] px-3 flex items-center justify-between`}>
                 <h1 className="font-bold text-[15px] sm:text-2xl text-white">{docName ? docName : "AskPDF"}</h1>
                 {/* <RiArrowDropDownLine className={`${Expand ? "rotate-180" : "rotate-0"} transition-all duration-300 font-bold text-3xl text-white cursor-pointer`} onClick={()=> setExpand(prev => !prev)} /> */}
             </div> 

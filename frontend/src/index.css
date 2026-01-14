@@ -1,9 +1,6 @@
 @import "tailwindcss";
 :root {
   font-family: cursive;
-  transition: all;
-  transition-timing-function: ease-in-out;
-  transition-duration: 300ms;
   background: linear-gradient(to right, #1b2329,  #111a21);
   color: #f6f7f8;
   /*
@@ -25,9 +22,9 @@
 
 body{
     /* color: rgba(0, 0, 0, 0.616); */
+    overflow: hidden;
   min-height: 100vh;
   width: 100%;
-  padding: 3rem;
   /* background: linear-gradient(to bottom, rgb(66, 176, 219) , skyblue);
   background: linear-gradient(to left, rgb(102, 186, 219) , skyblue); */
 }

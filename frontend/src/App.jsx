@@ -4,6 +4,8 @@ import Navbar from "./components/navbar"
 import { AppProvider } from "./contextAPI/DocContext/AppProvider"
 import { useContext, useState } from "react"
 import { AppContext } from "./contextAPI/DocContext/AppContext"
+import Footer from "./components/footer"
+import ReaderPDF from "./components/pdfreader"
 
 const AppContent= ()=>{
 
@@ -11,11 +13,14 @@ const AppContent= ()=>{
 
   return(
     <>
+    <div className="min-h-screen">
     <Navbar />
-    <div className="flex flex-col md:flex-row">
       {docName
         ? 
+        <div className="flex h-full">
+        <ReaderPDF />
         <Chatbot />
+        </div>
         :
         <Upload />
       }

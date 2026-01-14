@@ -1,10 +1,18 @@
-import React, { useEffect, useMemo, useState } from "react"
-import { RiArrowDropDownLine } from "react-icons/ri";
+import React, { useContext, useEffect, useMemo, useState } from "react"
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { AppContext } from "../contextAPI/DocContext/AppContext";
 
-const Chatbot= ({ docName }) =>{
+const Chatbot= () =>{
+
+    const { docDelete, handleDocDelete, docName, setDocDelete } = useContext(AppContext)
 
     const [Expand, setExpand] = useState(false)
     //bg-black/30 blur-[5px]
+
+          useEffect(()=>{
+         if(docDelete){
+            handleDocDelete()
+      }}, [docDelete])
     
     useEffect(()=>{
         setExpand(!!docName);
@@ -14,6 +22,12 @@ const Chatbot= ({ docName }) =>{
     <div className={`${Expand ? "opacity-100" : "opacity-0 md:flex hidden"} flex flex-col justify-center w-full border-2 border-primary rounded-b-xl transition-all duration-300`}>
            <div className={`w-full border-b border-primary h-[calc(10vh-0.6rem)] px-3 flex items-center justify-between`}>
                 <h1 className="font-bold text-[15px] sm:text-2xl text-white">{docName ? docName : "AskPDF"}</h1>
+                <button
+                  className="cursor-pointer text-red-500 border-none outline-none"
+                  onClick={()=> {setDocDelete(true)}}
+                  >
+                     <IoIosCloseCircleOutline />
+                </button>
                 {/* <RiArrowDropDownLine className={`${Expand ? "rotate-180" : "rotate-0"} transition-all duration-300 font-bold text-3xl text-white cursor-pointer`} onClick={()=> setExpand(prev => !prev)} /> */}
             </div> 
         <div className={`w-full h-[calc(90vh-5.55rem)] transition-all py-3 duration-300 shadow-2xl flex flex-col justify-between items-center rounded-b-xl relative`}>

@@ -1,20 +1,36 @@
 import Upload from "./Pages/upload"
 import Chatbot from "./Pages/chatbot"
-import { useState } from "react"
 import Navbar from "./components/navbar"
+import { AppProvider } from "./contextAPI/DocContext/AppProvider"
+import { useContext, useState } from "react"
+import { AppContext } from "./contextAPI/DocContext/AppContext"
 
-const App= () =>{
-  const [docName, setDocName] = useState("")
+const AppContent= ()=>{
+
+  const { docName } = useContext(AppContext)
 
   return(
     <>
-       <Navbar />
+    <Navbar />
     <div className="flex flex-col md:flex-row">
-      <Upload setDocName={setDocName} docName={docName} />
-      <Chatbot docName={docName}/>
+      {docName
+        ? 
+        <Chatbot />
+        :
+        <Upload />
+      }
      </div>
     </>
   )
+}
+
+const App= () =>{
+  return(
+        <AppProvider>
+          <AppContent />
+        </AppProvider>
+  )
+
 }
 
 export default App
